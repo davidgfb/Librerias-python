@@ -1,9 +1,28 @@
+from math import factorial
+import cronometro 
+#libreria propia adyacente
+
+TIEMPOINICIALPROGRAMA=getTiempoActual()
+#funcion propia libreria cronometro
+
 #funcion recursiva
-def factorial(n):
+def factorial1(n):
+    #PRE: para n entero >-1
     if n==0: return 1
-    else: return n*factorial(n-1)
+    else: return n*factorial1(n-1)
 
 #PROBADOR
+iniciaCronometro() 
+print(factorial1(1000))
+paraCronometro("propia")
+
+#PROBADOR
+iniciaCronometro()
+print(factorial(1000))
+paraCronometro("nativa")
+print ("\nTiempo total del programa:",
+       10**6*(getTiempoActual()-TIEMPOINICIALPROGRAMA),"us")
+
 '''
 #bucle for
 for n in range(1000):
