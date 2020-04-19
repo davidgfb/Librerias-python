@@ -12,7 +12,8 @@ def recuento(mensaje):
         recuento.append(mensaje)
     else:
         raise ValueError()
-        
+
+'''        
 #PROBADOR
 abierto=True
 while abierto:
@@ -30,7 +31,7 @@ while abierto:
     except:
         mensaje1=input('Caractér o comando no reconocido. Vuelva a introducirlo: ')
         recuento(mensaje1)
-    
+'''    
     
 
 
@@ -75,20 +76,20 @@ def factoriza(n):
     n=vAbs(n)
     factores=[]
     for i in range(n):
-        normalizado=i+1
-        print("n%(normalizado)=",n%(normalizado),"normalizado=",normalizado)
-        if n%(normalizado)==0 or 1==normalizado==n:
-            factores.append(normalizado)
+        i+=1
+        #print("n%i=",n%i,"i=",i)
+        if n%(i)==0 or 1==i==n:
+            factores.append(i)
     return factores
 
-'''
+
 #PROBADOR
 print(factoriza(13),"debe ser [1,13]")
 print(factoriza(26),"debe ser [1,2,13,26]")
 print(factoriza(54),"debe ser [1,2,3,6,9,18,27,54]")
 print(factoriza(10),"debe ser [1,2,5,10]")
 print(factoriza(1),"debe ser [1]")
-'''
+
 print(factoriza(-1),"debe ser [-1] + exc")
 
 
