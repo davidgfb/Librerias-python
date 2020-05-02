@@ -14,9 +14,10 @@ def factorialIterativo(n):
         factorial*=i
     return factorial
 
+'''
 #PROBADOR
 print(factorialIterativo(13),'debe ser 6227020800')
-
+'''
 
 
 
