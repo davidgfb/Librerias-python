@@ -13,6 +13,103 @@
 
 
 
+LETRAS=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q',
+            'r','s','t','u','v','w','x','y','z'] #27 alfabeto español
+def letra_A_Pos(letra):
+    
+    pos=0
+
+    while LETRAS[pos] != letra:
+        pos+=1
+    return pos
+
+'''
+#PROBADOR
+print(letra_A_Pos('a'),'debe ser 0')
+print(letra_A_Pos('z'),'debe ser 26')
+'''
+
+
+def pos_A_letra(pos):
+    lonLETRAS=len(LETRAS)-1
+    
+    if pos>lonLETRAS:
+        pos-=lonLETRAS+1 #solo valido para una vuelta
+        
+    return LETRAS[pos]
+
+'''
+#PROBADOR
+print(pos_A_letra(0),'debe ser a')
+print(pos_A_letra(26),'debe ser z')
+
+print(pos_A_letra(27),'debe ser a')
+'''
+
+
+
+     
+
+
+def devSigLetra(men,posiciones): #entra una lista       posiciones desplaz
+    
+    menDesco=[] #mensaje descodificado
+
+    for linea in men: #men=lista
+        linea=linea.lower() #tmb nos devuelve el men desco en minusculas
+        #print(linea)
+
+        for letra in linea: #linea=cadena
+            if letra!=' ': #para q no te lies con los espacios
+                #print(letra)
+                menDesco.append(pos_A_letra(letra_A_Pos(letra)+posiciones))
+            
+    return menDesco
+
+'''
+#PROBADOR
+men=['ibm']
+print(devSigLetra(men,-1),'debe ser hal') #-1 desp izda
+men=['hal']
+print(devSigLetra(men,1),'debe ser ibm') #1 desp dcha
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def decimalA_Ascii(entero):
     '''
     A-Z 65-90
@@ -591,6 +688,63 @@ print(vector)
 
 
 
+#repe
+'''
+def decimalA_Ascii(entero):
+    
+    A-Z 65-90
+    a-z 97-122
+    
+    alfabeto=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
+              'R','S','T','U','V','W','X','Y','Z',
+              'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
+              'r','s','t','u','v','w','x','y','z']
+    try:
+        if entero<91:
+            formato=65 #minuscula
+        else:
+            formato=71 #mayuscula
+        return alfabeto[entero-formato]
+
+    except:
+        return("Entero fuera del rango alfabeto")
+'''
+
+
+
+
+def asciiA_entero(letraAscii):
+    posicion=0
+    alfabeto=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
+              'R','S','T','U','V','W','X','Y','Z',
+              'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
+              'r','s','t','u','v','w','x','y','z']
+    
+    while alfabeto[posicion]!=letraAscii and posicion<len(alfabeto)-1:
+        #print('posicion',posicion,'<',len(alfabeto)-1)
+        #print('letra:',alfabeto[posicion])
+        posicion+=1
+    
+    if posicion<27:
+        formato=65 #minuscula
+        posicion+=formato
+    elif posicion<54:
+        formato=97 #mayuscula
+        print('letra',letraAscii,'es mayuscula')
+        posicion+=formato
+    else:
+        posicion='letra no encontrada'
+    return posicion
+
+#revisa esto
+''' 
+#PROBADOR
+print(asciiA_entero('A'),'debe ser 65')
+print(asciiA_entero('Z'),'debe ser 90')
+print(asciiA_entero('a'),'debe ser 97')
+print(asciiA_entero('z'),'debe ser 122')
+print(print(asciiA_entero('.'),'debe ser exc'))
+'''
 
 
 
@@ -603,6 +757,24 @@ print(vector)
 
 
 
+
+
+
+
+
+
+'''
+def asciiA_Binario(mAscii):
+    posicion=0
+    alfabeto=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q',
+              'R','S','T','U','V','W','X','Y','Z',
+              'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
+              'r','s','t','u','v','w','x','y','z']
+    for letra in alfabeto:
+        posicion+=1
+    
+    return binario
+'''
 
 
 
@@ -683,11 +855,11 @@ imprimeBinario(8)
 
 
 
-
+'''
 def decimalABin(entero):
     #max 8 bits = 1 byte
     binario=[]
-
+'''
 
 
 
