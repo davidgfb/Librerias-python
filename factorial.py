@@ -9,8 +9,7 @@ from math import factorial
 
 def factorialIterativo(n):
     factorial=1
-    for i in range(n):
-        i+=1
+    for i in range(n,n+1):
         factorial*=i
     return factorial
 
@@ -57,8 +56,11 @@ def paraCronometro(mensaje):
 #funcion recursiva
 def factorial1(n):
     #PRE: para n entero >-1
-    if n==0: return 1
-    else: return n*factorial1(n-1)
+    if n==0: 
+        factorial=1
+    else: 
+        factorial=n*factorial1(n-1)
+    return factorial
 
 '''
 #PROBADOR
