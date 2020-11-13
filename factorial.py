@@ -53,19 +53,20 @@ def paraCronometro(mensaje):
     print("\nFunción",mensaje,"terminada en",
           10**6*(getTiempoActual()-getTiempoInicial()),"us")
     
-#funcion recursiva
-def factorial1(n):
+
+def factorialR(n):
     #PRE: para n entero >-1
-    if n==0: 
-        factorial=1
-    else: 
-        factorial=n*factorial1(n-1)
+    factorial=1
+    
+    if n!=0: 
+        factorial=n*factorialR(n-1)
+     
     return factorial
 
 '''
 #PROBADOR
 iniciaCronometro()
-print(factorial1(1000),"debe ser ")
+print(factorialR(1000),"debe ser ")
 paraCronometro("propia")
 '''
 
